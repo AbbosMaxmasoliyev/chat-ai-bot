@@ -1,0 +1,35 @@
+.prompt-form {
+  display: grid;
+  grid-template-columns: auto 56px;
+  gap: 0.5rem;
+
+  .input-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #7A808C52;
+    border-radius: 30px;
+    padding: 16px 16px 16px 24px;
+    
+    input {
+      flex: 1;
+      padding: 0.5rem;
+      font-size: 1rem;
+      background: transparent;
+      &:focus{
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 0.5rem 0.75rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  button[type="submit"] {
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+  }
+}

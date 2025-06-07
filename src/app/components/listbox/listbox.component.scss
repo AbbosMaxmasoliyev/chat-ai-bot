@@ -1,0 +1,35 @@
+:host {
+  --p-togglebutton-checked-background: linear-gradient(211.24deg, #FFF179 18.98%, #FFF982 23.13%, #67D6A8 81.22%);
+  --p-togglebutton-border-color: none;
+  --p-togglebutton-content-checked-background: transparent;
+  --p-togglebutton-checked-color: #000;
+}
+
+// /* ToggleButton holatlari uchun gradient fon, rang va radius */
+// ::ng-deep .p-togglebutton-checked .p-togglebutton-content,
+// ::ng-deep .p-togglebutton.p-togglebutton-checked,
+// ::ng-deep .p-togglebutton:not(:disabled):not(.p-togglebutton-checked):hover {
+//   background: var(--p-togglebutton-checked-background);
+//   color: #000;
+//   border-radius: 12px;
+// }
+
+/* ToggleButton asosiy holat */
+::ng-deep .p-selectbutton .p-togglebutton {
+  background: none;
+  border-width:1px 1px 1px 1px!important;
+  border-color: #fafafa;
+  border-style: solid;
+  border-radius: 12px!important;
+  width: max-content;
+  padding: 6px 12px!important;
+  margin: 0 6px;
+
+}
+
+/* Horizontal Listbox (li elementlarni yonma-yon joylashtirish) */
+::ng-deep .p-togglebutton-content {
+  padding: 0!important;
+  
+}
+

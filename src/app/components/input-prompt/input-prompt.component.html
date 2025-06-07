@@ -1,0 +1,24 @@
+<form [formGroup]="promptForm" (ngSubmit)="submitPrompt()" class="prompt-form">
+  <div class="input-group h-[56px]">
+    <input
+      type="text"
+      class="h-[56px]"
+      formControlName="prompt"
+      placeholder="Write or speak your prompt..."
+    />
+    <button
+      type="button"
+      class="flex justify-center items-center text-[#7A808C]"
+      (click)="startVoiceInput()"
+    >
+      <mat-icon svgIcon="mic" />
+    </button>
+  </div>
+  <button
+    type="submit"
+    class="gradient-box flex justify-center items-center size-[56px] rounded-full text-black" 
+    [disabled]="!promptForm.valid"
+  >
+    <mat-icon svgIcon="send" />
+  </button>
+</form>

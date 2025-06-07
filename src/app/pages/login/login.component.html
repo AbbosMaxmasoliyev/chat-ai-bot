@@ -1,0 +1,47 @@
+<div
+  class="min-h-screen flex items-center justify-center bg-black relative overflow-hidden"
+>
+  <!-- Gradient background -->
+  <div class="absolute w-full z-10">
+    <div
+      class="bg-gradient-to-br from-black via-gray-900 to-green-900 w-full h-full opacity-80"
+    ></div>
+    <div
+      class="w-full h-full bg-cover opacity-100 z-10 flex justify-center items-center"
+    >
+      <img src="/images/waves.svg" alt="AI Friend" class=" " />
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div
+    class="z-10 text-center px-4 max-w-[390px] w-full flex flex-col items-stretch space-y-6"
+  >
+    <!-- Badge -->
+    <div
+      class="text-sm text-black bg-gradient-to-r from-green-200 to-yellow-200 px-4 py-1 rounded-full shadow-md"
+    >
+      Личный приятель с искусственным интеллектом
+    </div>
+
+    <!-- Avatar -->
+    <img src="/images/alien.svg" alt="AI Friend" class="mt-16" />
+
+    <!-- Text -->
+    <h1 class="text-white text-4xl font-grot font-medium leading-snug">
+      Чем я могу помочь <br />
+      вам сегодня?
+    </h1>
+
+    <!-- Button -->
+    <app-link
+      link="/home"
+      text="Начать"
+      background="bg-white w-full"
+      textColor="text-black"
+      borderRadius="2xl"
+      fontSize="text-lg  font-bold"
+      padding="py-3 px-10"
+    ></app-link>
+  </div>
+</div>

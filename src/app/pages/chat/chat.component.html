@@ -1,0 +1,71 @@
+<div
+  class="min-h-screen flex items-center justify-center bg-black relative overflow-hidden"
+>
+  <div class="flex flex-col max-w-[800px] w-full">
+    <div class="grid grid-cols-[40px_auto_40px] gap-3">
+      <button class="text-white rounded-full flex justify-center items-center">
+        <mat-icon svgIcon="chevron-right"></mat-icon>
+      </button>
+      <app-profile-avatar />
+      <button mat-button class="size-10">
+        <mat-icon svgIcon="pdf-download" class="!w-10 !h-10"></mat-icon>
+      </button>
+    </div>
+    <p-scrollpanel
+      [style]="{
+        height: 'calc(100vh - 130px)',
+        paddingLeft: '15px'
+      }"
+    >
+      <div class="my-10 flex flex-col gap-8" *ngIf="!messages.length">
+        <h2 class="text-center w-full">
+          Чем я могу помочь тебе, мой друг? 😊️
+        </h2>
+        <app-listbox />
+        <div class="grid md:grid-cols-2 gap-4">
+          <app-suggestion-card
+            contentTitle="Коды ошибок"
+            subtitle="Машинка показывает Е 12. Что это может быть?"
+          />
+          <app-suggestion-card
+            contentTitle="Коды ошибок"
+            subtitle="Машинка показывает Е 12. Что это может быть?"
+          />
+          <app-suggestion-card
+            contentTitle="Коды ошибок"
+            subtitle="Машинка показывает Е 12. Что это может быть?"
+          />
+          <app-suggestion-card
+            contentTitle="Коды ошибок"
+            subtitle="Машинка показывает Е 12. Что это может быть?"
+          />
+          <app-suggestion-card
+            contentTitle="Коды ошибок"
+            subtitle="Машинка показывает Е 12. Что это может быть?"
+          />
+          <app-suggestion-card
+            contentTitle="Коды ошибок"
+            subtitle="Машинка показывает Е 12. Что это может быть?"
+          />
+        </div>
+      </div>
+      <div class="messages" *ngIf="messages.length">
+        <div *ngFor="let msg of messages" [ngClass]="msg.role">
+          <div class="flex gap-3">
+            <mat-icon *ngIf="msg.role === 'user'" svgIcon="user"></mat-icon>
+            <strong *ngIf="msg.role === 'user'">Вы</strong>
+            <mat-icon *ngIf="msg.role === 'bot'" svgIcon="chat-bot"></mat-icon>
+            <strong *ngIf="msg.role === 'bot'">ArtGPT AI bot</strong>
+          </div>
+          <p [class.gradient_text]="msg.role === 'user'" class="font-sf">
+            {{ msg.content }}
+          </p>
+          <div *ngIf="msg.role === 'bot'" class="markdown-content">
+            <markdown [data]="markdown"></markdown>
+          </div>
+        </div>
+      </div>
+    </p-scrollpanel>
+    <app-input-prompt (promptSubmitted)="onPromptReceived($event)" />
+  </div>
+</div>

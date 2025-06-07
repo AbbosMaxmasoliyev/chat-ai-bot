@@ -1,0 +1,17 @@
+<div
+  #inputContainer
+  class="relative w-full h-[56px] rounded-[32px] border border-[#7A808C52] text-white bg-transparent placeholder-gray-400 focus:outline-none overflow-hidden"
+>
+  <input
+    #input
+    (focus)="onFocused()"
+    (blur)="onRemoveFocused()"
+    [type]="type()"
+    [placeholder]="placeholder()"
+    class="focus:outline-none px-[24px] w-full h-full pr-[34px] bg-transparent"
+  />
+  <mat-icon
+    [svgIcon]="'search'"
+    class="!text-[#7A808C] !w-[24px] !h-[24px] absolute z-10 right-3 top-[14px]"
+  ></mat-icon>
+</div>

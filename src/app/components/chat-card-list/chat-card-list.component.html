@@ -1,0 +1,13 @@
+<a [routerLink]="['/chat']" routerLinkActive="router-link-active"  class="block columns-2 gap-2 p-4 cursor-pointer">
+  <div
+    class="mb-2 break-inside-avoid p-4 rounded-lg "
+    *ngFor="let card of cards; let i = index"
+    [ngClass]="{ 'card': true, 'left': i % 2 === 0, 'right': i % 2 !== 0 }">
+    <h3 class="text-transparent bg-clip-text bg-gradient-to-l from-yellow-300 via-green-400 to-green-500 font-semibold text-lg leading-snug">{{ card.title }}</h3>
+    <p class="font-light text-base">{{ card.content }}</p>
+    <p class="font-light text-xs text-gray-400 mt-3">{{ myDate | timeAgo }}</p>
+
+
+
+  </div>
+</a>

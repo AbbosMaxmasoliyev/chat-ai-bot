@@ -1,0 +1,19 @@
+<a
+  [routerLink]="[link()]"
+  routerLinkActive="router-link-active"
+  class="w-full font-medium transition duration-200 hover:opacity-90 border"
+  [className]="[
+    background() +
+      ' ' +
+      textColor() +
+      ' ' +
+      'rounded-' +
+      borderRadius() +
+      ' ' +
+      padding() +
+      ' ' +
+      fontSize()
+  ]"
+>
+  {{ text() }}
+</a>

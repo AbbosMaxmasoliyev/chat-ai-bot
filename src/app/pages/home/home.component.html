@@ -1,0 +1,47 @@
+<div class="p-6 bg-black text-white min-h-screen flex justify-center">
+  <div class="w-[360px]">
+    <h1 class="text-2xl font-bold">Спрашивайте</h1>
+    <h2 class="text-2xl font-bold mb-6 flex gap-2 items-center">
+      у нашего <img
+        src="/images/chat.png"
+        alt
+        class="w-[42px] h-[42px] rounded-full">
+      <span class="text-green-400">ArtGPT</span>
+    </h2>
+
+    <div class="flex mb-4">
+      <app-input
+        [placeholder]="'Поиск ...'"
+        icon="search"
+        class="w-full"></app-input>
+    </div>
+
+    <div class="grid grid-cols-2 justify-between gap-4 mb-4">
+      <app-button
+        [onClick]="handleButtonClick('category')"
+        [active]="activeButton() === 'category'"
+        [text]="'Категории'"
+        [icon]="'image'"></app-button>
+
+      <app-button
+        [onClick]="handleButtonClick('chat')"
+        [active]="activeButton() === 'chat'"
+        [text]="'Чаты'"
+        [icon]="'message'"></app-button>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <!-- Category Cardlar uchun -->
+      <ng-container *ngIf="activeButton() === 'category'">
+        <app-category-card
+          *ngFor="let cat of categories"
+          [title]="cat.title"
+          [image]="cat.image"></app-category-card>
+      </ng-container>
+
+    </div>
+    <!-- Chat Cardlar uchun -->
+    <app-chat-card-list *ngIf="activeButton() === 'chat'"></app-chat-card-list>
+
+  </div>
+</div>

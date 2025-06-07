@@ -1,0 +1,11 @@
+<p-scrollpanel [style]="{ width: '100%', height: '50px' }">
+  <p-selectbutton
+    [options]="cities"
+    [(ngModel)]="selectedCity"
+    optionLabel="name"
+    optionValue="code"
+    aria-labelledby="basic"
+    class="horizontal-listbox"
+    styleClass="border border-red-500"
+  />
+</p-scrollpanel>
