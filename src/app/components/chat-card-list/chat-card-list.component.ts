@@ -12,14 +12,21 @@ import { RouterLink } from '@angular/router';
 
 })
 export class ChatCardListComponent {
-
-  myDate = "11-12-2024"
+  myDate = "11-12-2024";
   cards = [
     { title: 'Who is Pope Francis?', content: 'As of January 2022, Pope Francis...' },
-    { title: 'Tell me the story...', content: 'Once upon a time in Meadowville...' },
+    { title: 'Tell me the story...', content: 'It is a long established fact that a reader will be distracted...' },
     { title: 'Stiralnaya mashina Artel...', content: 'Kuda sypat poroshok v mashinku?' },
     { title: 'What can I do to concentrate?', content: 'Try effective study habits like...' },
     { title: 'What do you know about the French Revolution?', content: 'The French Revolution was a period...' },
+    { title: 'Who is Pope Francis?', content: 'As of January 2022, Pope Francis...' },
+    { title: 'Who is Pope Francis?', content: 'As of January 2022, Pope Francis...' },
+    { title: 'Who is Pope Francis?', content: 'As of January 2022, Pope Francis...' },
+    { title: 'Who is Pope Francis?', content: 'As of January 2022, Pope Francis...' },
+    { title: 'Who is Pope Francis?', content: 'As of January 2022, Pope Francis...' },
+    { title: 'Who is Pope Francis?', content: 'As of January 2022, Pope Francis...' },
+    { title: 'Who is Pope Francis?', content: 'As of January 2022, Pope Francis...' },
+    { title: 'Who is Pope Francis?', content: 'As of January 2022, Pope Francis...' },
     { title: 'Who is Pope Francis?', content: 'As of January 2022, Pope Francis...' },
   ];
 }

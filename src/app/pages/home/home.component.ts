@@ -30,11 +30,12 @@ export class HomeComponent {
     { title: 'Мини-печи', image: '/images/pech.jfif' },
     { title: 'Пылесосы', image: '/images/dazmol.jfif' },
     { title: 'Мелкая бытовая техника', image: '/images/dazmol.jfif' },
-    { title: 'Плиты', image: '/images/dazmol.jfif' },
+    { title: 'Плиты', image: '/images/muzlatgich.png' },
     { title: 'Телефоны', image: '/images/pech.jfif' },
     { title: 'Стиральные машины', image: '/images/pech.jfif' },
     { title: 'Холодильники', image: '/images/dazmol.jfif' },
     { title: 'Телевизоры', image: '/images/pech.jfif' },
+    { title: 'Muzlatgich', image: '/images/muzlatgich.png' },
   ];
 
 

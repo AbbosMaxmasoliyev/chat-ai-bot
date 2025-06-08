@@ -1,5 +1,5 @@
 import { MarkdownWord } from './../../../../node_modules/mermaid/dist/rendering-util/types.d';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { ProfileAvatarComponent } from "../../components/profile-avatar/profile-avatar.component";
 import { ListboxComponent } from "../../components/listbox/listbox.component";
@@ -8,6 +8,7 @@ import { InputPromptComponent } from "../../components/input-prompt/input-prompt
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { CommonModule } from '@angular/common';
 import { MarkdownModule } from 'ngx-markdown';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-chat',
@@ -16,24 +17,28 @@ import { MarkdownModule } from 'ngx-markdown';
   styleUrl: './chat.component.scss'
 })
 export class ChatComponent {
+  constructor(private location: Location) { }
+
   messages: { role: 'user' | 'bot', content: string }[] = [];
   markdown = `
-# Salom, ngx-markdown!
+    # Salom, ngx-markdown!
 
-Bu **markdown** formatidagi matn.
+    Bu **markdown** formatidagi matn.
 
-- Ro'yxat elementi 1
-- Ro'yxat elementi 2
-* One item
-* Another item
-  * A sub-item
-    * A deeper item
-  * Back in sub-item land
-  * And back at the main level
-[Google](https://www.google.com)
-
-
+    - Ro'yxat elementi 1
+    - Ro'yxat elementi 2
+    * One item
+    * Another item
+      * A sub-item
+        * A deeper item
+      * Back in sub-item land
+      * And back at the main level
+    [Google](https://www.google.com)
   `;
+
+  goBack() {
+    this.location.back()
+  }
   onPromptReceived(prompt: string): void {
     if (!prompt.trim()) return;
 

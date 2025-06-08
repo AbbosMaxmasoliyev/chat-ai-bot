@@ -3,7 +3,10 @@
 >
   <div class="flex flex-col max-w-[800px] w-full">
     <div class="grid grid-cols-[40px_auto_40px] gap-3">
-      <button class="text-white rounded-full flex justify-center items-center">
+      <button
+        (click)="goBack()"
+        class="text-white rounded-full flex justify-center items-center"
+      >
         <mat-icon svgIcon="chevron-right"></mat-icon>
       </button>
       <app-profile-avatar />
