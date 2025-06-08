@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="masonry">
-    <div class="masonry-item" *ngFor="let card of cards">
+    <a routerLink="/chat" class="masonry-item" *ngFor="let card of cards">
       <div class="card p-4 rounded-lg h-full">
         <h3 class="text-transparent bg-clip-text bg-gradient-to-l from-yellow-300 via-green-400 to-green-500 font-semibold text-lg leading-snug">
           {{ card.title }}
@@ -10,6 +10,6 @@
           {{ myDate | timeAgo }}
         </p>
       </div>
-    </div>
+    </a>
   </div>
 </div>
