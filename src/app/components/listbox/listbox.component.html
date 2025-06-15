@@ -1,4 +1,9 @@
-<p-scrollpanel [style]="{ width: '100%', height: '50px' }">
+<div
+  #containerScroll
+  (mousedown)="onMouseDown($event)"
+  [draggable]="false"
+  class="flex w-[100%] overflow-x-auto container-overflow"
+>
   <p-selectbutton
     [options]="cities"
     [(ngModel)]="selectedCity"
@@ -8,4 +13,4 @@
     class="horizontal-listbox"
     styleClass="border border-red-500"
   />
-</p-scrollpanel>
+</div>

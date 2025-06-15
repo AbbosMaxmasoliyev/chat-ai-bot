@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -32,7 +32,8 @@ export class InputPromptComponent implements OnInit, OnDestroy {
   promptForm!: FormGroup;
   recognizing = false;
   recognition!: SpeechRecognition;
-  @Output() promptSubmitted = new EventEmitter<string>(); // <-- YANGI QATOR
+  @Output() promptSubmitted = new EventEmitter<string>();
+  @ViewChild("micElement", { static: false }) micElement?: ElementRef<HTMLButtonElement>;
 
   constructor(private fb: FormBuilder) { }
 
@@ -57,11 +58,13 @@ export class InputPromptComponent implements OnInit, OnDestroy {
 
       this.recognition.onend = () => {
         this.recognizing = false;
+        this.micElement?.nativeElement.classList.remove('listening')
       };
     }
   }
 
   startVoiceInput(): void {
+    this.micElement?.nativeElement.classList.add('listening')
     if (this.recognition && !this.recognizing) {
       this.recognizing = true;
       this.recognition.start();

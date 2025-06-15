@@ -1,14 +1,14 @@
 import { MarkdownWord } from './../../../../node_modules/mermaid/dist/rendering-util/types.d';
-import { Component, Inject } from '@angular/core';
+import { Component, inject, Inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { ProfileAvatarComponent } from "../../components/profile-avatar/profile-avatar.component";
 import { ListboxComponent } from "../../components/listbox/listbox.component";
 import { SuggestionCardComponent } from "../../components/suggestion-card/suggestion-card.component";
 import { InputPromptComponent } from "../../components/input-prompt/input-prompt.component";
 import { ScrollPanelModule } from 'primeng/scrollpanel';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { MarkdownModule } from 'ngx-markdown';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
@@ -17,8 +17,7 @@ import { Location } from '@angular/common';
   styleUrl: './chat.component.scss'
 })
 export class ChatComponent {
-  constructor(private location: Location) { }
-
+  location = inject(Location)
   messages: { role: 'user' | 'bot', content: string }[] = [];
   markdown = `
     # Salom, ngx-markdown!

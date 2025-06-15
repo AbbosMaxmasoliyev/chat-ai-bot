@@ -5,6 +5,37 @@
   --p-togglebutton-checked-color: #000;
 }
 
+.container-overflow {
+  padding-bottom: 5px;
+
+  /* scroll qismi */
+  &::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+
+  /* scroll track (fon) */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    /* orqa fon */
+    border-radius: 10px;
+  }
+
+  /* scroll bosh harakatlanuvchi qismini */
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(211.24deg, #FFF179 18.98%, #FFF982 23.13%, #67D6A8 81.22%);
+    /* scroll rang */
+    border-radius: 10px;
+    border: 1px solid transparent;
+  }
+
+  /* hover holatdagi scroll qismi */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* hover holatdagi rang */
+  }
+}
+
 // /* ToggleButton holatlari uchun gradient fon, rang va radius */
 // ::ng-deep .p-togglebutton-checked .p-togglebutton-content,
 // ::ng-deep .p-togglebutton.p-togglebutton-checked,
@@ -17,19 +48,18 @@
 /* ToggleButton asosiy holat */
 ::ng-deep .p-selectbutton .p-togglebutton {
   background: none;
-  border-width:1px 1px 1px 1px!important;
+  border-width: 1px 1px 1px 1px !important;
   border-color: #fafafa;
   border-style: solid;
-  border-radius: 12px!important;
+  border-radius: 12px !important;
   width: max-content;
-  padding: 6px 12px!important;
+  padding: 6px 12px !important;
   margin: 0 6px;
 
 }
 
 /* Horizontal Listbox (li elementlarni yonma-yon joylashtirish) */
 ::ng-deep .p-togglebutton-content {
-  padding: 0!important;
-  
-}
+  padding: 0 !important;
 
+}

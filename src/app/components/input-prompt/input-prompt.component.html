@@ -8,7 +8,8 @@
     />
     <button
       type="button"
-      class="flex justify-center items-center text-[#7A808C]"
+      class="flex justify-center items-center text-[#7A808C] circle"
+      #micElement
       (click)="startVoiceInput()"
     >
       <mat-icon svgIcon="mic" />
@@ -16,7 +17,7 @@
   </div>
   <button
     type="submit"
-    class="gradient-box flex justify-center items-center size-[56px] rounded-full text-black" 
+    class="gradient-box flex justify-center items-center size-[56px] rounded-full text-black"
     [disabled]="!promptForm.valid"
   >
     <mat-icon svgIcon="send" />

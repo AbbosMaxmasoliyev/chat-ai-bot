@@ -1,3 +1,25 @@
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  ;
+
+  25% {
+    transform: scale(1.4);
+  }
+
+  75% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.3);
+  }
+
+
+}
+
 .prompt-form {
   display: grid;
   grid-template-columns: auto 56px;
@@ -10,26 +32,97 @@
     border: 1px solid #7A808C52;
     border-radius: 30px;
     padding: 16px 16px 16px 24px;
-    
+
     input {
       flex: 1;
       padding: 0.5rem;
       font-size: 1rem;
       background: transparent;
-      &:focus{
+
+      &:focus {
         outline: none;
       }
     }
 
     button {
-      padding: 0.5rem 0.75rem;
+      padding: 0.5rem;
       font-size: 1.2rem;
+
+
     }
   }
 
   button[type="submit"] {
     align-self: flex-end;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     font-weight: bold;
+
+
   }
+}
+
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transition: .5s;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+
+  i {
+    color: #b2b1b1;
+    font-size: 23px;
+    transition: .9s;
+  }
+
+  &:before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: .2;
+    z-index: -1;
+    position: absolute;
+  }
+}
+
+.circle.listening {
+  background: linear-gradient(211.24deg, #FFF179 18.98%, #FFF982 23.13%, #67D6A8 81.22%);
+
+  &:before {
+    background: gray;
+    animation: bounce .8s ease-in-out infinite .5s;
+  }
+
+  i {
+    color: #ffffff;
+  }
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  ;
+
+  25% {
+    transform: scale(1.4);
+  }
+
+  75% {
+    transform: scale(1.6);
+  }
+
+  100% {
+    transform: scale(1.7);
+  }
+
+
 }
