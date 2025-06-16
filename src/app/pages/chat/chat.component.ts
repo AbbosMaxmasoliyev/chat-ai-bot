@@ -8,11 +8,11 @@ import { InputPromptComponent } from "../../components/input-prompt/input-prompt
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { CommonModule, Location } from '@angular/common';
 import { MarkdownModule } from 'ngx-markdown';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
-  imports: [MatIconModule, ProfileAvatarComponent, ListboxComponent, SuggestionCardComponent, InputPromptComponent, ScrollPanelModule, CommonModule, MarkdownModule],
+  imports: [MatIconModule, ProfileAvatarComponent, ListboxComponent, SuggestionCardComponent, InputPromptComponent, ScrollPanelModule, CommonModule, MarkdownModule, RouterLink],
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.scss'
 })
@@ -35,9 +35,7 @@ export class ChatComponent {
     [Google](https://www.google.com)
   `;
 
-  goBack() {
-    this.location.back()
-  }
+
   onPromptReceived(prompt: string): void {
     if (!prompt.trim()) return;
 
